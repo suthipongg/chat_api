@@ -4,6 +4,7 @@ from models.utils import ManageBody
 
 class ReviewModel(BaseModel, ManageBody):
     text_product : str = Field(..., description="text_product (**required)")
+    n_result : int = Field(5, description="n_result (**optional)")
     created_at : str = ""
     
     def __init__(self, **data):
@@ -17,5 +18,6 @@ class ReviewModel(BaseModel, ManageBody):
         json_schema_extra = {
             "example": {
                 "text_product": "test",
+                'n_result': 5,
             }
         }
